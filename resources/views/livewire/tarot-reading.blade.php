@@ -43,24 +43,23 @@
 
                                 <div class="my-4 sm:my-6 mx-auto w-12 sm:w-16 h-[1px] bg-gradient-to-r from-transparent via-[#FF007A] to-transparent"></div>
 
-                                <p class="text-[10px] sm:text-xs tracking-[0.25em] sm:tracking-[0.3em] uppercase text-gray-400/60 mb-1 sm:mb-2">Te espero en</p>
                                 <p class="text-xl sm:text-2xl md:text-3xl font-light tracking-[0.1em] text-[#00F7FF]">
                                     Sábado 11
                                 </p>
 
+                                <div class="mt-2 sm:mt-3 flex items-center justify-center gap-2 sm:gap-3">
+                                    <span class="text-[#FF007A] text-base sm:text-lg">⏤</span>
+                                    <span class="text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.3em] uppercase text-gray-300/80">21 hs</span>
+                                    <span class="text-[#FF007A] text-base sm:text-lg">⏤</span>
+                                </div>
+
                                 <div class="my-4 sm:my-6 mx-auto w-12 sm:w-16 h-[1px] bg-gradient-to-r from-transparent via-[#FFD300] to-transparent"></div>
 
-                                <div class="space-y-2 sm:space-y-3">
-                                    <div class="flex items-center justify-center gap-2 sm:gap-3">
-                                        <span class="text-[#FF007A] text-base sm:text-lg">⏤</span>
-                                        <span class="text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.3em] uppercase text-gray-300/80">21 hs</span>
-                                        <span class="text-[#FF007A] text-base sm:text-lg">⏤</span>
-                                    </div>
-                                    <div class="flex items-center justify-center gap-2 sm:gap-3">
-                                        <span class="text-[#00F7FF] text-base sm:text-lg">✦</span>
-                                        <span class="text-xs sm:text-sm tracking-[0.1em] sm:tracking-[0.15em] text-gray-300/80">Freitas 533 B, Fontana</span>
-                                        <span class="text-[#00F7FF] text-base sm:text-lg">✦</span>
-                                    </div>
+                                <p class="text-[10px] sm:text-xs tracking-[0.25em] sm:tracking-[0.3em] uppercase text-gray-400/60 mb-1 sm:mb-2">Te espero en</p>
+                                <div class="flex items-center justify-center gap-2 sm:gap-3">
+                                    <span class="text-[#00F7FF] text-base sm:text-lg">✦</span>
+                                    <span class="text-xs sm:text-sm tracking-[0.1em] sm:tracking-[0.15em] text-gray-300/80">Freitas 533 B, Fontana</span>
+                                    <span class="text-[#00F7FF] text-base sm:text-lg">✦</span>
                                 </div>
 
                                 <div class="my-4 sm:my-6 mx-auto w-12 sm:w-16 h-[1px] bg-gradient-to-r from-transparent via-[#00F7FF] to-transparent"></div>
