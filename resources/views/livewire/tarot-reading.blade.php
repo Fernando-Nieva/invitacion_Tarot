@@ -172,7 +172,7 @@
                                 <span class="text-[#FF007A] text-lg">◈</span>
                                 <span class="text-[10px] tracking-[0.3em] uppercase text-[#FF007A]/60">Misty dice...</span>
                             </div>
-                            <p class="text-sm md:text-base text-[#FFD300]/90 leading-relaxed font-light" x-text="selectedCard.mistyMessage || selectedCard.message || 'Los arcanos han hablado...'"></p>
+                            <p class="text-sm md:text-base text-[#FFD300]/90 leading-relaxed font-light" x-text="selectedMessage"></p>
                         </div>
                     </div>
 
@@ -235,6 +235,7 @@
                 cards: @json($allCards),
                 currentCard: null,
                 selectedCard: null,
+                selectedMessage: '',
                 animating: true,
                 revealed: false,
                 intervalId: null,
@@ -394,7 +395,7 @@
                     this.selectedCard = { ...this.currentCard };
 
                     const phrases = this.getRandomMessages(this.selectedCard.name);
-                    this.selectedCard.mistyMessage = phrases.length > 0
+                    this.selectedMessage = phrases.length > 0
                         ? phrases[Math.floor(Math.random() * phrases.length)]
                         : this.selectedCard.message || "Los arcanos han hablado...";
 
