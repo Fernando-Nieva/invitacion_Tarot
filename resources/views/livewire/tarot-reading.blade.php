@@ -13,23 +13,94 @@
     <div class="pointer-events-none fixed -bottom-40 -right-40 w-80 h-80 bg-[#FF007A] rounded-full opacity-[0.03] blur-[120px]"></div>
 
     {{-- Main content --}}
-    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-8">
-        {{-- Title --}}
-        <div class="mb-8 md:mb-12 text-center">
-            <h1 class="text-4xl md:text-6xl font-light tracking-[0.3em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#00F7FF] via-[#FF007A] to-[#FFD300] neon-glow-text">
-                Misty's Tarot
-            </h1>
-            <p class="mt-2 text-xs md:text-sm tracking-[0.2em] text-[#00F7FF]/60 uppercase">
-                El destino te espera en el corazón de Night City
-            </p>
-            <div class="mt-4 mx-auto w-24 h-[1px] bg-gradient-to-r from-transparent via-[#00F7FF] to-transparent"></div>
-        </div>
+    <div class="relative z-10 min-h-screen px-4 py-8 flex items-center justify-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 w-full max-w-6xl mx-auto items-start lg:items-center">
 
-        {{-- Card display area with Alpine.js --}}
-        <div wire:ignore
-            x-data="tarotReader"
-            class="relative w-full max-w-[260px] md:max-w-[300px] mx-auto"
-        >
+            {{-- Left: Birthday invitation card --}}
+            <div class="flex flex-col items-center">
+                <div class="relative w-full max-w-[380px]">
+                    {{-- Ambient glow --}}
+                    <div class="absolute -inset-10 rounded-full bg-[#FF007A] opacity-[0.06] blur-[80px]"></div>
+
+                    {{-- Card --}}
+                    <div class="relative glass-card rounded-2xl overflow-hidden border border-[#FF007A]/20 shadow-[0_0_40px_rgba(255,0,122,0.1)]">
+                        {{-- Top decorative bar --}}
+                        <div class="h-1 bg-gradient-to-r from-[#00F7FF] via-[#FF007A] to-[#FFD300]"></div>
+
+                        <div class="p-8 md:p-10 text-center space-y-6">
+                            {{-- Corner decorations --}}
+                            <div class="relative">
+                                <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#00F7FF]/30 rounded-tl"></div>
+                                <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#FF007A]/30 rounded-tr"></div>
+                            </div>
+
+                            <div class="pt-4">
+                                <p class="text-[10px] tracking-[0.4em] uppercase text-[#00F7FF]/60 mb-4">✦ Invitación Especial ✦</p>
+
+                                <h2 class="text-4xl md:text-5xl font-light tracking-[0.15em] text-transparent bg-clip-text bg-gradient-to-r from-[#FFD300] to-[#FF007A] neon-glow-text">
+                                    FER
+                                </h2>
+
+                                <div class="my-6 mx-auto w-16 h-[1px] bg-gradient-to-r from-transparent via-[#FF007A] to-transparent"></div>
+
+                                <p class="text-xs tracking-[0.3em] uppercase text-gray-400/60 mb-2">Te espero en</p>
+                                <p class="text-2xl md:text-3xl font-light tracking-[0.1em] text-[#00F7FF]">
+                                    Sábado 11
+                                </p>
+
+                                <div class="my-6 mx-auto w-16 h-[1px] bg-gradient-to-r from-transparent via-[#FFD300] to-transparent"></div>
+
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-center gap-3">
+                                        <span class="text-[#FF007A] text-lg">⏤</span>
+                                        <span class="text-sm tracking-[0.3em] uppercase text-gray-300/80">21 hs</span>
+                                        <span class="text-[#FF007A] text-lg">⏤</span>
+                                    </div>
+                                    <div class="flex items-center justify-center gap-3">
+                                        <span class="text-[#00F7FF] text-lg">✦</span>
+                                        <span class="text-sm tracking-[0.15em] text-gray-300/80">Freitas 533 B, Fontana</span>
+                                        <span class="text-[#00F7FF] text-lg">✦</span>
+                                    </div>
+                                </div>
+
+                                <div class="my-6 mx-auto w-16 h-[1px] bg-gradient-to-r from-transparent via-[#00F7FF] to-transparent"></div>
+
+                                <p class="text-xs tracking-[0.2em] text-[#FFD300]/60 italic">
+                                    "La noche apenas comienza... ✦"
+                                </p>
+                            </div>
+
+                            {{-- Corner decorations bottom --}}
+                            <div class="relative">
+                                <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#FFD300]/30 rounded-bl"></div>
+                                <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#00F7FF]/30 rounded-br"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Scanline overlay on card --}}
+                    <div class="absolute inset-0 rounded-2xl pointer-events-none card-scanline opacity-[0.04]"></div>
+                </div>
+            </div>
+
+            {{-- Right: Tarot reading --}}
+            <div class="flex flex-col items-center">
+                {{-- Title --}}
+                <div class="mb-6 md:mb-8 text-center">
+                    <h1 class="text-3xl md:text-5xl font-light tracking-[0.3em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#00F7FF] via-[#FF007A] to-[#FFD300] neon-glow-text">
+                        Misty's Tarot
+                    </h1>
+                    <p class="mt-2 text-xs md:text-sm tracking-[0.2em] text-[#00F7FF]/60 uppercase">
+                        El destino te espera en el corazón de Night City
+                    </p>
+                    <div class="mt-4 mx-auto w-24 h-[1px] bg-gradient-to-r from-transparent via-[#00F7FF] to-transparent"></div>
+                </div>
+
+                {{-- Card display area with Alpine.js --}}
+                <div wire:ignore
+                    x-data="tarotReader"
+                    class="relative w-full max-w-[260px] md:max-w-[300px] mx-auto"
+                >
             {{-- Glow ring behind card when revealed --}}
             <template x-if="revealed">
                 <div>
@@ -144,6 +215,10 @@
                     </div>
                 </div>
             </template>
+            </div>
+
+            {{-- Close right column --}}
+            </div>
         </div>
 
         {{-- Footer --}}
