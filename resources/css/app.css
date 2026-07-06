@@ -1,0 +1,188 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@utility glass-card {
+    background: rgba(10, 14, 39, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 247, 255, 0.1);
+}
+
+@utility glass-card-inner {
+    background: rgba(10, 14, 39, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 247, 255, 0.08);
+}
+
+@utility neon-border-card {
+    box-shadow:
+        0 0 15px rgba(0, 247, 255, 0.1),
+        inset 0 0 15px rgba(0, 247, 255, 0.03),
+        0 0 30px rgba(255, 0, 122, 0.05);
+}
+
+@utility neon-glow-text {
+    text-shadow:
+        0 0 10px rgba(0, 247, 255, 0.3),
+        0 0 20px rgba(255, 0, 122, 0.2),
+        0 0 40px rgba(255, 211, 0, 0.1);
+}
+
+/* Animations */
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes card-spin {
+    0% { transform: perspective(800px) rotateY(0deg) translateZ(0); }
+    25% { transform: perspective(800px) rotateY(5deg) translateZ(10px); }
+    50% { transform: perspective(800px) rotateY(0deg) translateZ(0); }
+    75% { transform: perspective(800px) rotateY(-5deg) translateZ(10px); }
+    100% { transform: perspective(800px) rotateY(0deg) translateZ(0); }
+}
+
+@keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-slow {
+    0%, 100% { opacity: 0.08; }
+    50% { opacity: 0.15; }
+}
+
+@keyframes bounce-dot {
+    0%, 80%, 100% { transform: scale(0.4); opacity: 0.4; }
+    40% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
+
+@utility animate-shimmer {
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+@utility animate-card-spin {
+    animation: card-spin 0.6s ease-in-out infinite;
+}
+
+@utility animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+}
+
+@utility animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+}
+
+@utility animate-bounce-dot {
+    animation: bounce-dot 1.4s ease-in-out infinite;
+}
+
+/* Scanline effect */
+.scanline-overlay {
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.1) 2px,
+        rgba(0, 0, 0, 0.1) 4px
+    );
+    pointer-events: none;
+}
+
+/* Vignette */
+.vignette-overlay {
+    background: radial-gradient(
+        ellipse at center,
+        transparent 50%,
+        rgba(5, 8, 22, 0.8) 100%
+    );
+}
+
+/* Card scanline */
+.card-scanline {
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(0, 247, 255, 0.03) 3px,
+        rgba(0, 247, 255, 0.03) 4px
+    );
+}
+
+/* Card revealed state */
+.card-revealed {
+    animation: reveal-card 0.6s ease-out forwards;
+}
+
+@keyframes reveal-card {
+    0% {
+        transform: perspective(800px) rotateY(10deg) scale(0.9);
+        filter: blur(4px) brightness(1.5);
+    }
+    50% {
+        transform: perspective(800px) rotateY(-2deg) scale(1.05);
+        filter: blur(0) brightness(1.1);
+    }
+    100% {
+        transform: perspective(800px) rotateY(0deg) scale(1.25);
+        filter: blur(0) brightness(1);
+    }
+}
+
+/* Glass morphism card */
+.glass-card {
+    background: linear-gradient(
+        135deg,
+        rgba(10, 14, 39, 0.7) 0%,
+        rgba(26, 16, 64, 0.5) 100%
+    );
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 247, 255, 0.12);
+}
+
+/* Card container 3D */
+.card-container {
+    perspective: 1000px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-container:hover {
+    transform: perspective(1000px) rotateY(2deg) rotateX(-2deg);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050816;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 247, 255, 0.2);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 247, 255, 0.4);
+}
+
+/* Selection */
+::selection {
+    background: rgba(255, 0, 122, 0.3);
+    color: #fff;
+}
