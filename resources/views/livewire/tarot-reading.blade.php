@@ -172,7 +172,7 @@
                                 <span class="text-[#FF007A] text-lg">◈</span>
                                 <span class="text-[10px] tracking-[0.3em] uppercase text-[#FF007A]/60">Misty dice...</span>
                             </div>
-                            <p class="text-sm md:text-base text-[#FFD300]/90 leading-relaxed font-light" x-text="`"${selectedCard.mistyMessage}"`"></p>
+                            <p class="text-sm md:text-base text-[#FFD300]/90 leading-relaxed font-light" x-text="selectedCard.mistyMessage || selectedCard.message || 'Los arcanos han hablado...'"></p>
                         </div>
                     </div>
 
