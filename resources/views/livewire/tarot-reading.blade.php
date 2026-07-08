@@ -223,7 +223,7 @@
         {{-- Footer --}}
         <div class="mt-12 md:mt-16 text-center">
             <p class="text-[8px] tracking-[0.4em] uppercase text-white/10">
-                ✦ Misty's Esoterica — Night City ✦
+                Night City ✦
             </p>
         </div>
     </div>
