@@ -64,8 +64,12 @@
 
                                 <div class="my-4 sm:my-6 mx-auto w-12 sm:w-16 h-[1px] bg-gradient-to-r from-transparent via-[#00F7FF] to-transparent"></div>
 
-                                <p class="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] text-[#FFD300]/60 italic">
-                                    "Te espero a ver los cuartos de final de Argentina 🇦🇷 - Suiza 🇨🇭, trae bebida"
+                                <p class="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] text-[#FFD300]/60 italic flex items-center justify-center gap-1.5 flex-wrap">
+                                    "Te espero a ver los cuartos de final de
+                                    <img src="{{ asset('img/ar.png') }}" alt="Argentina" class="inline-block w-5 h-auto rounded-sm">
+                                    -
+                                    <img src="{{ asset('img/ch.png') }}" alt="Suiza" class="inline-block w-5 h-auto rounded-sm">
+                                    , trae bebida"
                                 </p>
                             </div>
 
