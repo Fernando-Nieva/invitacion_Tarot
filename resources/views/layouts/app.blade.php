@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Misty's Tarot - Cyberpunk Reading</title>
+    <title>El destino te espera en el corazón de Night City</title>
     @vite(['resources/css/app.css'])
     @livewireStyles
 </head>
