@@ -35,7 +35,7 @@
                             </div>
 
                             <div class="pt-2 sm:pt-4">
-                                <p class="text-[8px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase text-[#00F7FF]/60 mb-2 sm:mb-4">✦ Invitación Especial ✦</p>
+                                <p class="text-[8px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase text-[#00F7FF]/60 mb-2 sm:mb-4">✦ Te invito a mi cumple ✦</p>
 
                                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-light tracking-[0.15em] text-transparent bg-clip-text bg-gradient-to-r from-[#FFD300] to-[#FF007A] neon-glow-text">
                                     FER
