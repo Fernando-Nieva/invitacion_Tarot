@@ -87,10 +87,10 @@
                 {{-- Title --}}
                 <div class="mb-4 sm:mb-6 md:mb-8 text-center">
                     <h1 class="text-2xl sm:text-3xl md:text-5xl font-light tracking-[0.2em] sm:tracking-[0.3em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#00F7FF] via-[#FF007A] to-[#FFD300] neon-glow-text">
-                        El destino te espera en el corazón de Night City
+                        Tarot Cyberpunk
                     </h1>
                     <p class="mt-1 sm:mt-2 text-[10px] sm:text-xs md:text-sm tracking-[0.15em] sm:tracking-[0.2em] text-[#00F7FF]/60 uppercase">
-                        El destino te espera en el corazón de Night City
+                        Los arcanos te esperan
                     </p>
                     <div class="mt-2 sm:mt-4 mx-auto w-16 sm:w-24 h-[1px] bg-gradient-to-r from-transparent via-[#00F7FF] to-transparent"></div>
                 </div>
