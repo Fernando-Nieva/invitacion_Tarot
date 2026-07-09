@@ -14,12 +14,19 @@ WORKDIR /var/www/html
 COPY . .
 
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
-RUN sed -i 's!/var/www/!/var/www/html/public!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf 2>/dev/null || true
 
 RUN composer install --no-dev --optimize-autoloader && \
     npm install && npm run build && \
-    php artisan config:cache && php artisan view:cache && \
+    php artisan view:cache && \
     touch database/database.sqlite && php artisan migrate --force && \
-    chown -R www-data:www-data /var/www/html
+    php artisan storage:link && \
+    chown -R www-data:www-data /var/www/html && \
+    chmod -R 775 storage bootstrap/cache
+
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["apache2-foreground"]
 
 EXPOSE 80
