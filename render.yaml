@@ -1,16 +1,10 @@
 services:
   - type: web
     name: invitacion-tarot
-    runtime: php
+    env: docker
     region: oregon
     plan: free
-    buildCommand: |
-      composer install --no-dev --optimize-autoloader
-      npm install && npm run build
-      php artisan config:cache
-      php artisan view:cache
-      touch database/database.sqlite && php artisan migrate --force
-    healthCheckPath: /
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: APP_ENV
         value: production
