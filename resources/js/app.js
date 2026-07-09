@@ -147,7 +147,7 @@ document.addEventListener('alpine:init', () => {
             this.pickRandomCard()
             this.intervalId = setInterval(() => {
                 this.pickRandomCard()
-            }, 80)
+            }, 50)
         },
 
         pickRandomCard() {
