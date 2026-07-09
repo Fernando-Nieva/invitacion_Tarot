@@ -9,12 +9,6 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-@utility glass-card {
-    background: rgba(10, 14, 39, 0.6);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(0, 247, 255, 0.1);
-}
-
 @utility glass-card-inner {
     background: rgba(10, 14, 39, 0.8);
     backdrop-filter: blur(8px);
@@ -62,11 +56,6 @@
 @keyframes bounce-dot {
     0%, 80%, 100% { transform: scale(0.4); opacity: 0.4; }
     40% { transform: scale(1); opacity: 1; }
-}
-
-@keyframes scanline {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100vh); }
 }
 
 @utility animate-shimmer {

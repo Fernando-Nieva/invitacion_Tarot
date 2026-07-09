@@ -13,12 +13,12 @@
     <div class="pointer-events-none fixed -bottom-40 -right-40 w-80 h-80 bg-[#FF007A] rounded-full opacity-[0.03] blur-[120px]"></div>
 
     {{-- Main content --}}
-    <div class="relative z-10 min-h-screen px-3 sm:px-4 py-4 sm:py-8 flex items-center justify-center">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 w-full max-w-6xl mx-auto items-start md:items-center">
+    <div class="relative z-10 min-h-screen px-4 sm:px-6 py-4 sm:py-8 flex items-center justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 md:gap-10 lg:gap-12 w-full max-w-6xl mx-auto items-start md:items-center">
 
             {{-- Left: Birthday invitation card --}}
             <div class="flex flex-col items-center w-full">
-                <div class="relative w-full max-w-[320px] sm:max-w-[360px] md:max-w-[380px]">
+                <div class="relative w-full max-w-[300px] sm:max-w-[360px] md:max-w-[380px]">
                     {{-- Ambient glow --}}
                     <div class="absolute -inset-6 sm:-inset-10 rounded-full bg-[#FF007A] opacity-[0.06] blur-[60px] sm:blur-[80px]"></div>
 
@@ -65,11 +65,11 @@
                                 <div class="my-4 sm:my-6 mx-auto w-12 sm:w-16 h-[1px] bg-gradient-to-r from-transparent via-[#00F7FF] to-transparent"></div>
 
                                 <p class="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] text-[#FFD300]/60 italic flex items-center justify-center gap-1.5 flex-wrap">
-                                    "Te espero a ver los cuartos de final de
+                                    "Vení a ver los cuartos de final entre 
                                     <img src="{{ asset('img/ar.png') }}" alt="Argentina" class="inline-block w-5 h-auto rounded-sm">
                                     -
                                     <img src="{{ asset('img/ch.png') }}" alt="Suiza" class="inline-block w-5 h-auto rounded-sm">
-                                    , trae bebida"
+                                    .Traé la bebida que quieras."
                                 </p>
                             </div>
 
