@@ -1,10 +1,23 @@
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import { bunny } from 'laravel-vite-plugin/fonts';
+import tailwindcss from '@tailwindcss/vite';
+
+import { cloudflare } from "@cloudflare/vite-plugin";
 
 export default defineConfig({
-    plugins: [tailwindcss()],
-    build: {
-        outDir: 'dist',
-        emptyOutDir: true,
+    plugins: [laravel({
+        input: ['resources/css/app.css', 'resources/js/app.js'],
+        refresh: true,
+        fonts: [
+            bunny('Instrument Sans', {
+                weights: [400, 500, 600],
+            }),
+        ],
+    }), tailwindcss(), cloudflare()],
+    server: {
+        watch: {
+            ignored: ['**/storage/framework/views/**'],
+        },
     },
-})
+});
