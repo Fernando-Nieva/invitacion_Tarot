@@ -14,6 +14,16 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        URL::forceRootUrl(config('app.url'));
+        if ($this->app->environment('production')) {
+            $url = config('app.url', 'http://localhost');
+
+            if (!str_starts_with($url, 'https://')) {
+                $url = 'https://invitacion-tarot.onrender.com';
+            }
+
+            config(['app.url' => $url]);
+            URL::forceRootUrl($url);
+            URL::forceScheme('https');
+        }
     }
 }

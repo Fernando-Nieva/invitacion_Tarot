@@ -15,6 +15,7 @@ else
     php artisan key:generate --force
 fi
 
+php artisan config:clear
 php artisan config:cache
-echo "APP_URL cached as: $(php artisan config:get app.url)"
+echo "APP_URL = $(php -r 'echo config("app.url");' 2>/dev/null || php artisan tinker --execute='echo config("app.url");' 2>/dev/null || echo 'unknown')"
 exec "$@"
