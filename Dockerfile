@@ -3,8 +3,12 @@ FROM php:8.4-apache
 RUN a2enmod rewrite
 
 RUN apt-get update && apt-get install -y \
-    git curl libpng-dev libonig-dev libxml2-dev zip unzip nodejs npm \
+    git curl libpng-dev libonig-dev libxml2-dev zip unzip \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
+    apt-get install -y nodejs && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd
 
