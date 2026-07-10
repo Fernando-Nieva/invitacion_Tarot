@@ -205,8 +205,22 @@
                 </div>
             </template>
 
+            {{-- Loading during preload --}}
+            <template x-if="!preloaded && cards.length > 0">
+                <div class="mt-8 text-center animate-fade-in-up">
+                    <p class="text-xs tracking-[0.3em] uppercase text-[#00F7FF]/40 animate-pulse">
+                        Cargando los arcanos...
+                    </p>
+                    <div class="mt-3 flex justify-center gap-1">
+                        <template x-for="i in 3" :key="i">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#00F7FF]/40 animate-bounce-dot" :style="`animation-delay: ${(i-1) * 0.15}s`"></span>
+                        </template>
+                    </div>
+                </div>
+            </template>
+
             {{-- Instruction during animation --}}
-            <template x-if="animating">
+            <template x-if="animating && preloaded">
                 <div class="mt-8 text-center animate-fade-in-up">
                     <p class="text-xs tracking-[0.3em] uppercase text-[#00F7FF]/40 animate-pulse">
                         Toca la carta para detener tu destino
@@ -234,7 +248,7 @@
                 currentCard: null,
                 selectedCard: null,
                 selectedMessage: '',
-                animating: true,
+                animating: false,
                 revealed: false,
                 intervalId: null,
 
@@ -359,10 +373,27 @@
                     return shuffled.slice(0, count);
                 },
 
+                preloaded: false,
+
                 init() {
                     if (this.cards.length > 0) {
-                        this.startAnimation();
+                        this.preloadImages().then(() => {
+                            this.preloaded = true;
+                            this.startAnimation();
+                        });
                     }
+                },
+
+                preloadImages() {
+                    const promises = this.cards.map(card => {
+                        return new Promise((resolve) => {
+                            const img = new Image();
+                            img.onload = resolve;
+                            img.onerror = resolve;
+                            img.src = card.image_url;
+                        });
+                    });
+                    return Promise.all(promises);
                 },
 
                 startAnimation() {
@@ -382,7 +413,7 @@
                 },
 
                 selectCard() {
-                    if (!this.animating || !this.currentCard) return;
+                    if (!this.preloaded || !this.animating || !this.currentCard) return;
 
                     if (this.intervalId) {
                         clearInterval(this.intervalId);
