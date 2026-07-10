@@ -18,7 +18,7 @@ RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available
 RUN composer install --no-dev --optimize-autoloader && \
     npm install && npm run build && \
     php artisan view:cache && \
-    touch database/database.sqlite && php artisan migrate --force && \
+    touch database/database.sqlite && php artisan migrate --force && php artisan db:seed --force && \
     php artisan storage:link && \
     chown -R www-data:www-data /var/www/html && \
     chmod -R 775 storage bootstrap/cache
